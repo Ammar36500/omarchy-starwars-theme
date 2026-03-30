@@ -69,11 +69,13 @@ mv ~/.config/hypr/hyprlock.conf.bak ~/.config/hypr/hyprlock.conf
 
 # Preview
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/2b0ce4a5-7d5f-4ec3-9331-016f13494abc" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a4d8dc0a-8df0-477f-b56b-535131cfdf82" />
+
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8085e9d2-9950-4f8b-b49b-2d999a9b1c8a" />
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/26f2ff89-7523-49a8-92eb-381765c19199" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/86115976-bb50-4417-9f91-b7277e94a5fd" />
+
 
 
 # Waybar
