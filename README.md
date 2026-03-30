@@ -71,22 +71,24 @@ mv ~/.config/hypr/hyprlock.conf.bak ~/.config/hypr/hyprlock.conf
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/2b0ce4a5-7d5f-4ec3-9331-016f13494abc" />
 
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8085e9d2-9950-4f8b-b49b-2d999a9b1c8a" />
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/26f2ff89-7523-49a8-92eb-381765c19199" />
 
 
 # Waybar
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c615900b-0fc7-413c-afca-a79844d5639d" />
+<img width="1920" height="48" alt="image" src="https://github.com/user-attachments/assets/edb89040-7557-416d-a893-41b59a0cedbf" />
 
 
 
 # Walker
 
-<img width="641" height="408" alt="image" src="https://github.com/user-attachments/assets/da88fb78-d074-4b8f-9179-5ab0c58d3447" />
+<img width="643" height="407" alt="image" src="https://github.com/user-attachments/assets/b14f6976-a912-4eed-afdd-fc5e916045dc" />
 
 
-<img width="297" height="393" alt="image" src="https://github.com/user-attachments/assets/4dd87bc7-8425-4e56-b308-1e879b19c556" />
+<img width="299" height="399" alt="image" src="https://github.com/user-attachments/assets/7deebb89-b01a-4dbb-9729-224656d55fd0" />
+
 
 
 # HyprLocker
