@@ -1,0 +1,294 @@
+@define-color background #050508;
+@define-color foreground #a0b4cc;
+
+* {
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    transition: all 0.25s ease;
+}
+
+window#waybar {
+    background: transparent;
+    color: #a0b4cc;
+}
+
+/* ══════════════════════════════════════════════════
+   GLOBAL — Sharp angular Imperial HUD modules
+   No border-radius — everything is sharp cuts
+   ══════════════════════════════════════════════════ */
+#custom-omarchy, #workspaces, #clock, #network, #cpu,
+#bluetooth, #mpris, #pulseaudio, #battery,
+#custom-updates, #custom-weather, #custom-power {
+    background: rgba(5, 5, 10, 0.88);
+    border-radius: 0px;
+    padding: 0px 12px;
+    margin: 3px 1px;
+
+    /* Hard cut left border — Imperial rank stripe */
+    border-left: 3px solid #8b0000;
+    border-top: 1px solid rgba(140, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(20, 50, 120, 0.3);
+    border-right: none;
+
+    box-shadow:
+        -2px 0 8px rgba(180, 0, 0, 0.15),
+        0 1px 0 rgba(20, 50, 140, 0.2),
+        inset 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ══════════════════════════════════════════════════
+   LAUNCHER — Death Star targeting reticle
+   ══════════════════════════════════════════════════ */
+#custom-omarchy {
+    min-width: 32px;
+    min-height: 32px;
+    background-image: url("file:///home/cuh/.config/omarchy/current/theme/start.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 0;
+    border-left: 3px solid #cc0000;
+    border-top: 1px solid rgba(200, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(200, 0, 0, 0.6);
+    border-right: none;
+    box-shadow:
+        -3px 0 14px rgba(200, 0, 0, 0.5),
+        -6px 0 28px rgba(180, 0, 0, 0.25),
+        inset 0 0 20px rgba(180, 0, 0, 0.1);
+    margin-right: 8px;
+}
+
+/* ══════════════════════════════════════════════════
+   WORKSPACES — TIE fighter wing panels
+   ══════════════════════════════════════════════════ */
+#workspaces {
+    padding: 0 4px;
+    border-left: 3px solid #8b0000;
+    background: rgba(5, 5, 10, 0.88);
+}
+
+#workspaces button {
+    all: unset;
+    color: rgba(100, 120, 160, 0.5);
+    padding: 0 10px;
+    border-radius: 0;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    color: #cc2200;
+    border-bottom: 2px solid rgba(180, 0, 0, 0.6);
+    background: rgba(120, 0, 0, 0.1);
+}
+
+#workspaces button.active {
+    color: #cc2200;
+    border-bottom: 2px solid #cc2200;
+    background: rgba(100, 0, 0, 0.15);
+    text-shadow: 0 0 10px rgba(200, 0, 0, 0.8);
+}
+
+#workspaces button.urgent {
+    color: #ff0000;
+    border-bottom: 2px solid #ff0000;
+    text-shadow: 0 0 14px rgba(255, 0, 0, 1.0);
+}
+
+/* ══════════════════════════════════════════════════
+   CLOCK — Holographic blue center
+   Completely different style: no border-radius,
+   double-line underline like Imperial display
+   ══════════════════════════════════════════════════ */
+#clock {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: #4a90d9;
+
+    background: rgba(4, 8, 20, 0.92);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: 2px solid rgba(40, 80, 180, 0.8);
+    border-bottom: 2px solid rgba(40, 80, 180, 0.8);
+    padding: 0 24px;
+
+    text-shadow:
+        0 0 6px  rgba(60, 140, 255, 1.0),
+        0 0 16px rgba(40, 100, 220, 0.7),
+        0 0 32px rgba(20, 80,  200, 0.4);
+
+    box-shadow:
+        0 -2px 16px rgba(40, 80, 200, 0.2),
+        0  2px 16px rgba(40, 80, 200, 0.2),
+        inset 0 0 40px rgba(20, 40, 120, 0.15);
+}
+
+/* ══════════════════════════════════════════════════
+   RIGHT MODULES — Imperial rank colors
+   Each has sharp left cut, no radius
+   ══════════════════════════════════════════════════ */
+
+/* Updates — red alert */
+#custom-updates {
+    color: #cc2200;
+    border-left-color: #8b0000;
+    text-shadow: 0 0 8px rgba(200, 0, 0, 0.6);
+    box-shadow: -2px 0 10px rgba(180, 0, 0, 0.2);
+}
+
+/* Weather — sensor blue */
+#custom-weather {
+    color: #5a9fd4;
+    border-left-color: #1a4a8e;
+    text-shadow: 0 0 6px rgba(60, 120, 200, 0.5);
+}
+
+/* CPU — systems green */
+#cpu {
+    color: #4a8a5a;
+    border-left-color: #1a4a2a;
+    text-shadow: 0 0 6px rgba(40, 120, 60, 0.5);
+}
+
+/* Bluetooth — comm blue */
+#bluetooth {
+    color: #4a80c4;
+    border-left-color: #1a3a7e;
+    text-shadow: 0 0 6px rgba(50, 100, 200, 0.5);
+}
+
+/* Network — tactical green */
+#network {
+    color: #3a9a5a;
+    border-left-color: #1a5a2a;
+    text-shadow: 0 0 6px rgba(40, 140, 70, 0.5);
+}
+
+#network.disconnected {
+    color: #660000;
+    border-left-color: #440000;
+    text-shadow: none;
+}
+
+/* Audio — frequency grey-blue */
+#pulseaudio {
+    color: #6a8aaa;
+    border-left-color: #2a4a6a;
+}
+
+#pulseaudio.muted {
+    color: rgba(60, 70, 90, 0.5);
+    border-left-color: rgba(30, 40, 60, 0.4);
+}
+
+/* MPRIS — dark side purple */
+#mpris {
+    color: #7a50aa;
+    border-left-color: #3a1a6a;
+    text-shadow: 0 0 6px rgba(100, 50, 180, 0.4);
+}
+
+/* ══════════════════════════════════════════════════
+   BATTERY — power core states
+   ══════════════════════════════════════════════════ */
+#battery {
+    color: #4a80c4;
+    border-left-color: #1a3a7e;
+    text-shadow: 0 0 6px rgba(50, 100, 200, 0.4);
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #3ab4ff;
+    border-left-color: #1a6aee;
+    text-shadow:
+        0 0 8px rgba(40, 160, 255, 0.9),
+        0 0 20px rgba(20, 120, 220, 0.5);
+    box-shadow:
+        -2px 0 12px rgba(30, 120, 255, 0.3),
+        inset 0 0 20px rgba(20, 80, 200, 0.08);
+}
+
+#battery.warning:not(.charging) {
+    color: #cc4400;
+    border-left-color: #882200;
+    text-shadow: 0 0 8px rgba(200, 60, 0, 0.7);
+}
+
+#battery.critical:not(.charging) {
+    color: #ff0000;
+    border-left-color: #cc0000;
+    text-shadow: 0 0 12px rgba(255, 0, 0, 1.0);
+    box-shadow:
+        -2px 0 16px rgba(255, 0, 0, 0.5),
+        -4px 0 32px rgba(220, 0, 0, 0.25);
+}
+
+/* ══════════════════════════════════════════════════
+   POWER — Execute order red
+   ══════════════════════════════════════════════════ */
+#custom-power {
+    color: #aa0000;
+    border-left: 3px solid #660000;
+    text-shadow: 0 0 8px rgba(180, 0, 0, 0.6);
+    box-shadow:
+        -2px 0 12px rgba(160, 0, 0, 0.3),
+        -4px 0 24px rgba(140, 0, 0, 0.15);
+    margin-left: 8px;
+}
+
+#custom-power:hover {
+    color: #ff0000;
+    border-left-color: #cc0000;
+    text-shadow:
+        0 0 12px rgba(255, 0, 0, 1.0),
+        0 0 28px rgba(220, 0, 0, 0.6);
+    box-shadow:
+        -2px 0 20px rgba(220, 0, 0, 0.6),
+        -4px 0 40px rgba(180, 0, 0, 0.3);
+}
+
+/* ══════════════════════════════════════════════════
+   HOVER — each module flares its own color
+   ══════════════════════════════════════════════════ */
+#custom-updates:hover {
+    color: #ff2200;
+    text-shadow: 0 0 14px rgba(255, 0, 0, 0.9);
+    border-left-color: #cc0000;
+    box-shadow: -2px 0 14px rgba(220, 0, 0, 0.4);
+}
+#custom-weather:hover { color: #7ac8ff; text-shadow: 0 0 12px rgba(80, 180, 255, 0.9); }
+#cpu:hover            { color: #6abf7a; text-shadow: 0 0 12px rgba(60, 180, 90, 0.9); }
+#bluetooth:hover      { color: #6aacff; text-shadow: 0 0 12px rgba(80, 160, 255, 0.9); }
+#network:hover        { color: #4acc6a; text-shadow: 0 0 12px rgba(50, 200, 90, 0.9); }
+#pulseaudio:hover     { color: #8aaaca; text-shadow: 0 0 12px rgba(100, 150, 200, 0.9); }
+#mpris:hover          { color: #aa70ee; text-shadow: 0 0 12px rgba(160, 80, 240, 0.9); }
+#battery:hover        { color: #6ab0ff; text-shadow: 0 0 12px rgba(80, 160, 255, 0.9); }
+
+/* ══════════════════════════════════════════════════
+   TOOLTIPS — Imperial data readout
+   ══════════════════════════════════════════════════ */
+tooltip {
+    background: rgba(4, 4, 10, 0.98);
+    border-radius: 0;
+    border-left:   3px solid #8b0000;
+    border-top:    1px solid rgba(140, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(20, 50, 140, 0.5);
+    border-right:  1px solid rgba(20, 50, 140, 0.3);
+    box-shadow:
+        -4px 0 20px rgba(180, 0, 0, 0.15),
+        0 4px 20px rgba(0, 0, 0, 0.9);
+}
+
+tooltip label {
+    color: #8090a8;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 4px 2px;
+}

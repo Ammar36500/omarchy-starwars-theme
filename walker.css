@@ -1,0 +1,208 @@
+@define-color selected-text #4a90d9;
+@define-color text #a0b4cc;
+@define-color base #050508;
+@define-color border #8b0000;
+@define-color foreground #a0b4cc;
+@define-color background #050508;
+
+* {
+  all: unset;
+}
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "Courier New", monospace;
+  font-size: 14px;
+  color: #a0b4cc;
+  letter-spacing: 0.06em;
+}
+
+scrollbar { opacity: 0; }
+.normal-icons { -gtk-icon-size: 16px; }
+.large-icons  { -gtk-icon-size: 32px; }
+
+/* ══════════════════════════════════════════════════
+   BOX WRAPPER — Imperial targeting computer
+   Sharp angular cuts, NO rounded corners anywhere
+   Asymmetric — thick left border, thin right
+   ══════════════════════════════════════════════════ */
+.box-wrapper {
+  position: relative;
+  padding: 24px 20px 20px 28px;
+
+  /* Asymmetric — heavier on the left like Imperial rank */
+  border-left:   4px solid #8b0000;
+  border-top:    1px solid rgba(140, 0, 0, 0.5);
+  border-right:  1px solid rgba(20, 50, 140, 0.3);
+  border-bottom: 1px solid rgba(20, 50, 140, 0.5);
+  border-radius: 0;
+
+  background:
+    linear-gradient(105deg,
+      rgba(14, 2, 2, 0.96)  0%,
+      rgba(6,  6, 14, 0.96) 60%,
+      rgba(4,  4, 12, 0.98) 100%
+    );
+
+  /* Red left bleed, blue right bleed */
+  box-shadow:
+    -6px 0 20px rgba(180, 0,  0,   0.3),
+    -3px 0 8px  rgba(160, 0,  0,   0.15),
+     6px 0 20px rgba(20,  50, 180, 0.15),
+     0 20px 60px rgba(0,  0,  0,   0.95),
+    inset 3px 0 0 rgba(80, 0, 0, 0.2);
+}
+
+/* Top-left corner cut — Imperial angular detail */
+.box-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -4px;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #cc0000, transparent);
+  pointer-events: none;
+}
+
+/* Bottom scan line — targeting computer sweep */
+.box-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(180, 0,  0,   0.8) 0%,
+    rgba(140, 0,  0,   0.4) 20%,
+    rgba(20,  50, 160, 0.4) 80%,
+    rgba(30,  60, 180, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Search bar — Imperial input terminal ── */
+.search-container {
+  position: relative;
+  background: rgba(8, 4, 4, 0.9);
+  padding: 10px 14px;
+  border-left:   2px solid rgba(140, 0, 0, 0.6);
+  border-top:    1px solid rgba(100, 0, 0, 0.3);
+  border-right:  none;
+  border-bottom: 1px solid rgba(20, 40, 100, 0.3);
+  border-radius: 0;
+  margin-bottom: 8px;
+
+  box-shadow:
+    -2px 0 8px rgba(140, 0, 0, 0.12),
+    inset 0 1px 0 rgba(100, 0, 0, 0.06);
+}
+
+.input {
+  caret-color: #cc2200;
+  color: #a0b4cc;
+  background: transparent;
+}
+
+.input placeholder { opacity: 0.3; color: #3a4a5a; }
+.input:focus, .input:active { box-shadow: none; outline: none; }
+
+/* ── Content ── */
+.content-container { overflow: hidden; }
+.placeholder {} .scroll {} .list {}
+.preview-box {} .box {}
+child, child > * {}
+
+/* Hover — red left stripe flare */
+child:hover .item-box {
+  background: linear-gradient(
+    90deg,
+    rgba(140, 0, 0, 0.15) 0%,
+    rgba(80,  0, 0, 0.05) 60%,
+    transparent           100%
+  );
+  border-left-color: rgba(200, 0, 0, 0.9);
+  box-shadow: -2px 0 8px rgba(180, 0, 0, 0.15);
+}
+
+/* Selected — blue lightsaber */
+child:selected .item-box {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 60, 160, 0.18) 0%,
+    rgba(10, 40, 120, 0.08) 60%,
+    transparent             100%
+  );
+  border-left-color: #4a90d9;
+  box-shadow:
+    -2px 0 10px rgba(50, 120, 220, 0.25),
+    inset 0 0 30px rgba(30, 80, 200, 0.05);
+}
+
+child:selected .item-box * {
+  color: #4a90d9;
+  text-shadow:
+    0 0 8px  rgba(60, 140, 255, 0.8),
+    0 0 20px rgba(40, 100, 220, 0.4);
+}
+
+/* ── Base row — rank stripe left border ── */
+.item-box {
+  padding-left: 16px;
+  border-left:   2px solid rgba(60, 20, 20, 0.4);
+  border-radius: 0;
+  transition:
+    background        0.18s ease,
+    border-left-color 0.18s ease,
+    box-shadow        0.18s ease;
+}
+
+.item-text-box { all: unset; padding: 12px 0; }
+
+.item-text {
+  color: #8a9ab8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.item-subtext { font-size: 0px; min-height: 0px; margin: 0px; padding: 0px; }
+
+.item-image {
+  margin-right: 14px;
+  -gtk-icon-transform: scale(0.85);
+  filter: drop-shadow(0 0 3px rgba(30, 70, 180, 0.35));
+}
+
+.current {
+  font-style: italic;
+  color: rgba(140, 0, 0, 0.6);
+  text-transform: none;
+}
+
+/* ── Keybind hints — Imperial status readout ── */
+.keybind-hints {
+  background: rgba(6, 3, 3, 0.95);
+  padding: 8px 14px;
+  margin-top: 8px;
+  border-left:  2px solid rgba(100, 0, 0, 0.4);
+  border-top:   1px solid rgba(20, 40, 100, 0.3);
+  border-radius: 0;
+  box-shadow: -2px 0 6px rgba(120, 0, 0, 0.08);
+}
+
+.keybind-hints * {
+  font-size: 10px;
+  color: rgba(60, 80, 120, 0.5);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── Preview pane ── */
+.preview {
+  background: rgba(4, 4, 10, 0.97);
+  border-left: 1px solid rgba(20, 50, 140, 0.2);
+  border-top:  1px solid rgba(140, 0, 0, 0.08);
+  border-radius: 0;
+}
